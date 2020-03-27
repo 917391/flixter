@@ -19,5 +19,12 @@
     <div class="col-sm-8 col-12">
       <%= @course.description %>
     </div>
+    <ul>
+      <% @course.sections.each do |section| %>
+        <li>
+          <%= section.title %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
