@@ -1,4 +1,6 @@
 class Instructor::LessonController < ApplicationController
+  before_action :authenticate_user!                                               #this makes sure there is a user logged in
+
   def new
     @section = Section.find(params[:section_id])
     @lesson = Lesson.new
