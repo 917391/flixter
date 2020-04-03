@@ -2,11 +2,11 @@ class Instructor::CoursesController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @courses = Course.new
+    @course = Course.new
   end
 
   def create
-    @courses = current_user.courses.create(course_params)
+    @course = current_user.courses.create(course_params)
     if @courses.valid?
       redirect_to instructor_course_path(@course)
     else
@@ -15,7 +15,7 @@ class Instructor::CoursesController < ApplicationController
   end
 
   def show
-    @courses = Course.find(params[:id])
+    @course = Course.find(params[:id])
   end
 
   private 
