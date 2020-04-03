@@ -16,8 +16,13 @@ ActiveRecord::Schema.define(version: 2020_03_26_233308) do
   enable_extension "plpgsql"
 
   create_table "courses", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.decimal "cost"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
   create_table "lessons", force: :cascade do |t|
