@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 2020_04_23_154501) do
     t.text "description"
     t.decimal "cost"
     t.integer "user_id"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
@@ -32,12 +32,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_154501) do
     t.integer "section_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "video"
     t.index ["section_id"], name: "index_lessons_on_section_id"
-  end
-
-  create_table "photos", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "sections", force: :cascade do |t|
