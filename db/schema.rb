@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2020_04_23_154501) do
     t.string "title"
     t.string "subtitle"
     t.integer "section_id"
-    t.string "video"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["section_id"], name: "index_lessons_on_section_id"
