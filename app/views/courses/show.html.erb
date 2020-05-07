@@ -29,7 +29,7 @@
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                   redirect_to course_path(current_course) 
                   data-description="A month's subscription"
-                  data-amount="<%= (@course.cost * 100).to_i %>"
+                  data-amount="<%= (@course.cost * 100  ).to_i %>"
                   data-locale="auto"></script>
         <% end %>
       <% end %>
@@ -47,7 +47,7 @@
           <%= section.title %>
         </h3>
         <div class="row">
-          <% section.lessons.each do |lesson| %>
+          <% section.lessons.rank(:row_order).each do |lesson| %>
             <div class="col-12 col-sm-6">
               <div class="lesson text-center">
                 <br />
