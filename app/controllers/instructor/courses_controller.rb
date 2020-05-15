@@ -17,6 +17,7 @@
 
   def show
     @course = Course.find(params[:id])
+    @section = Section.new
   end
 
   private
